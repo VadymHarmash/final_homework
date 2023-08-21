@@ -1,0 +1,20 @@
+.offer{
+    background-color: var(--blue-bg);
+    padding: 200px 0;
+    &__wrapper{
+        h3 {
+            @extend %block-subtitle-style;
+        }
+
+        h2 {
+            @extend %block-title-style;
+            color: var(--clean-white-bg);
+            margin-bottom: 50px;
+        }
+
+    }
+    &__products{
+        @extend %centring;
+        justify-content: space-between;
+    }
+}
