@@ -12,7 +12,7 @@ export default function Buttons({ count }) {
       <NavLink to='/cart' className="cart-link">
         <div className='header__buttons__button cart'>
           <img src={cart} alt="Cart" />
-          <p>Cart ({count})</p>
+          <p>Cart (<span className={count > 0 ? 'active' : ''}>{count}</span>)</p>
         </div>
       </NavLink>
     </div>

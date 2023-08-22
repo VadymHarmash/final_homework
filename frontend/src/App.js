@@ -3,12 +3,22 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
 import { BrowserRouter } from 'react-router-dom'
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsFetchData } from './actions/products.js'
 
 function App() {
-  const total = 0
+  const [totalCount, setTotalCount] = useState(0)
+  const [productsArray, setProductsArray] = useState([])
+
+  const total = totalCount
+
+  const totalCountUpdater = (newTotalCount) => setTotalCount(newTotalCount)
+
+  useEffect(() => {
+    setTotalCount(totalCount);
+  }, [totalCount]);
+
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
 
@@ -29,7 +39,7 @@ function App() {
         </header>
 
         <main className='main'>
-          <Main products={products} />
+          <Main products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />
         </main>
 
         <footer className="footer">

@@ -8,16 +8,16 @@ import Projects from './Projects/Projects'
 import News from './News/News'
 import Cart from './Cart/Cart'
 
-export default function Main({ products }) {
+export default function Main({ products, totalCountUpdater, productsArray }) {
     return (
         <Routes>
-            <Route path='/' element={<Home products={products} />} />
+            <Route path='/' element={<Home products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />} />
             <Route path='/about' element={<About />} />
             <Route path='/pages' element={<Pages />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/news' element={<News />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Cart products={products} productsArray={productsArray} />} />
         </Routes>
     )
 }

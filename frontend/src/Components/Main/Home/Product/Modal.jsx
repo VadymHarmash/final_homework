@@ -4,7 +4,7 @@ import Price from './Price';
 import InfoButtons from './InfoButtons';
 import Image from './Image';
 
-export default function Modal({ isOpen, onClose, product, tempArray = [] }) {
+export default function Modal({ isOpen, onClose, product, tempArray = [], totalCountUpdater }) {
     const [quantity, setQuantity] = useState(0)
 
     const handleInput = (event) => {
@@ -27,6 +27,11 @@ export default function Modal({ isOpen, onClose, product, tempArray = [] }) {
         onClose()
     }
 
+    const countQuantity = () => {
+        const newTotalCount = tempArray.reduce((total, currentProduct) => total + currentProduct.quantity, 0)
+        totalCountUpdater(newTotalCount)
+    }
+
     if (!isOpen) return null
 
     return (
@@ -46,7 +51,10 @@ export default function Modal({ isOpen, onClose, product, tempArray = [] }) {
                         <div className="modal__content__quantity">
                             <span>Quantity:</span>
                             <input type="text" placeholder='0' value={quantity} onChange={handleInput} />
-                            <button onClick={sendToCart}>Add To Cart</button>
+                            <button onClick={() => {
+                                sendToCart()
+                                countQuantity()
+                            }}>Add To Cart</button>
                         </div>
                     </div>
                 </div>

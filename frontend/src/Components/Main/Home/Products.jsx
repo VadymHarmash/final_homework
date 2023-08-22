@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import Product from './Product/Product.jsx';
 
-export default function Products({ products }) {
+export default function Products({ products, totalCountUpdater, productsArray }) {
   const limitedProducts = products.slice(0, 8)
   const [fullCatalog, setFullCatalog] = useState(false)
-  const [productsArray, setProductsArray] = useState([]);
-
-  function check() {
-    console.log(productsArray);
-  }
 
   return (
     <div className='products'>
@@ -18,17 +13,16 @@ export default function Products({ products }) {
           <h2>Our Products</h2>
           <div className="products__cards">
             {fullCatalog ? (products.map((product) => (
-              <Product key={product._id} product={product} tempArray={productsArray} />
+              <Product key={product._id} product={product} tempArray={productsArray} totalCountUpdater={totalCountUpdater} />
             )))
               :
-            limitedProducts.map((product) => (
-              <Product key={product._id} product={product} tempArray={productsArray}/>
-            ))}
+              limitedProducts.map((product) => (
+                <Product key={product._id} product={product} tempArray={productsArray} totalCountUpdater={totalCountUpdater} />
+              ))}
           </div>
           <button className='products__button' onClick={() => {
-            setFullCatalog(!fullCatalog);
+            setFullCatalog(!fullCatalog)
           }}>{fullCatalog ? 'Hide All' : 'Load More'}</button>
-          <button onClick={check}>check</button>
         </div>
       </div>
     </div>

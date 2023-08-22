@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Banner from './Banner'
 import Posts from './Posts'
 import About from './About'
@@ -10,15 +10,25 @@ import Organic from './Organic'
 import News from './News'
 import Form from './Form'
 
-export default function Home({ products }) {
+export default function Home({ products, totalCountUpdater, productsArray }) {
+
+  // const [totalCount, setTotalCount] = useState(0)
+  // const [productsArray, setProductsArray] = useState([])
+
+  // const totalCountUpdater = (newTotalCount) => {
+  //   setTotalCount(newTotalCount)
+  //   console.log(productsArray)
+  //   console.log(newTotalCount)
+  // }
+
   return (
     <>
       <Banner />
       <Posts />
       <About />
-      <Products products={products} />
+      <Products products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />
       <Testimonial />
-      <Offer products={products} />
+      <Offer products={products} totalCountUpdater={totalCountUpdater} />
       <Eco />
       <Organic />
       <News />

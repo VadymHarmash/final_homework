@@ -4,7 +4,7 @@ import Modal from './Modal';
 import Price from './Price';
 import Image from './Image';
 
-export default function Product({ product, tempArray }) {
+export default function Product({ product, tempArray, totalCountUpdater }) {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     function openModal() {
@@ -26,7 +26,7 @@ export default function Product({ product, tempArray }) {
                     <Stars />
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} product={product} tempArray={tempArray} />
+            <Modal isOpen={isModalOpen} onClose={closeModal} product={product} tempArray={tempArray} totalCountUpdater={totalCountUpdater} />
         </div>
     );
 }
