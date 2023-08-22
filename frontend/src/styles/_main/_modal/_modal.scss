@@ -71,30 +71,6 @@
             }
         }
 
-        &__price {
-            display: flex;
-            align-items: baseline;
-            gap: 7px;
-            margin-top: 6px;
-
-            p {
-                margin: 10px 0 0;
-            }
-
-            .actual-price {
-                @extend %block-paragraph-style;
-                font-weight: 700;
-            }
-
-            .non-actual-price {
-                text-decoration: line-through;
-                color: var(--non-actual-price);
-                font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-                font-size: 0.83em;
-                font-weight: 600;
-            }
-        }
-
         &__quantity {
             @extend %centring;
             justify-content: flex-start;

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Product from './Product/Product.jsx';
 
-function Products({ products }) {
+export default function Products({ products }) {
   const limitedProducts = products.slice(0, 8)
   const [fullCatalog, setFullCatalog] = useState(false)
-  const [productsToBuy, setProductsToBuy] = useState([])
+  const [productsArray, setProductsArray] = useState([]);
+
+  function check() {
+    console.log(productsArray);
+  }
 
   return (
     <div className='products'>
@@ -14,20 +18,19 @@ function Products({ products }) {
           <h2>Our Products</h2>
           <div className="products__cards">
             {fullCatalog ? (products.map((product) => (
-              <Product key={product._id} product={product} />
+              <Product key={product._id} product={product} tempArray={productsArray} />
             )))
               :
             limitedProducts.map((product) => (
-              <Product key={product._id} product={product} />
+              <Product key={product._id} product={product} tempArray={productsArray}/>
             ))}
           </div>
           <button className='products__button' onClick={() => {
-            setFullCatalog(!fullCatalog)
+            setFullCatalog(!fullCatalog);
           }}>{fullCatalog ? 'Hide All' : 'Load More'}</button>
+          <button onClick={check}>check</button>
         </div>
       </div>
     </div>
   );
 }
-
-export default Products;

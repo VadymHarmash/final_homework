@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Stars from '../Shared/Stars';
 import Modal from './Modal';
+import Price from './Price';
+import Image from './Image';
 
-export default function Product({ product }) {
+export default function Product({ product, tempArray }) {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const productsToBuy = []
 
     function openModal() {
         setIsModalOpen(true);
@@ -12,26 +13,20 @@ export default function Product({ product }) {
 
     function closeModal() {
         setIsModalOpen(false);
-        console.log(productsToBuy)
     }
 
     return (
         <div className="products__cards__card">
             <div onClick={openModal}>
                 <span className='category products__cards__card__category'>{product.category}</span>
-                <div className="products__cards__card__image">
-                    <img src={product.image} alt={product.name} />
-                </div>
+                <Image product={product} />
                 <div className='name products__cards__card__name'>{product.name}</div>
                 <div className="products__cards__card__rates">
-                    <div className="price">
-                        <p className={!product.discountPrice ? 'actual-price' : 'non-actual-price'}>{product.price}</p>
-                        <p className={!product.discountPrice ? 'non-actual-price' : 'actual-price'}>{product.discountPrice}</p>
-                    </div>
-                    <div className='stars'><Stars /></div>
+                    <Price product={product} />
+                    <Stars />
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} product={product} productsToBuy={productsToBuy}/>
+            <Modal isOpen={isModalOpen} onClose={closeModal} product={product} tempArray={tempArray} />
         </div>
     );
 }
