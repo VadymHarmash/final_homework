@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const Movie = require('./models/product.js')
+const Product = require('./models/product.js')
 
 const PORT = 3333
 const URL = 'mongodb://127.0.0.1:27017/final_task'
@@ -24,7 +24,7 @@ app.listen(PORT, (err) => {
 })
 
 app.get('/products', (req, res) => {
-    Movie
+    Product
         .find()
         .then((products) => {
             res
