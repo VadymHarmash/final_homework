@@ -23,6 +23,7 @@ export default function Modal({ isOpen, onClose, product, tempArray = [], totalC
                 }
             )
         }
+
         setQuantity(0)
         onClose()
     }

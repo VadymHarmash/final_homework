@@ -1,6 +1,7 @@
 import React from 'react'
+import ThanksPage from './ThanksPage';
 
-export default function OrderForm({ productsToBuy }) {
+export default function OrderForm({ productsToBuy, totalCost, setIsOrderPlaced }) {
     const fields = [
         {
             classes: [
@@ -59,15 +60,41 @@ export default function OrderForm({ productsToBuy }) {
         }
     ]
 
-    function showDataFromForm(event) {
+    async function showDataFromForm(event) {
         event.preventDefault()
         const formData = new FormData(event.target)
-        const data = {}
+        const userData = {}
         formData.forEach((value, name) => {
-            data[name] = value
-        })
-        console.log(data)
-        console.log(productsToBuy)
+            userData[name] = value
+        });
+
+        const orderData = {
+            products: productsToBuy.map(product => ({
+                product: product.product,
+                quantity: product.quantity,
+            })),
+            orderDate: new Date().toLocaleString(),
+            totalCost: totalCost
+        }
+
+        console.log(totalCost)
+
+        try {
+            await fetch('http://localhost:3333/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData),
+            })
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result);
+                })
+                setIsOrderPlaced(true)
+        } catch (error) {
+            console.error('Error:', error)
+        }
     }
 
     return (

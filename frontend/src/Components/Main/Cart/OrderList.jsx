@@ -5,7 +5,7 @@ import OrderListDelete from './OrderListItems/OrderListDelete'
 import TotalPrice from './OrderListItems/TotalPrice'
 import OrderForm from './OrderListItems/OrderForm'
 
-export default function OrderList({ productsArray }) {
+export default function OrderList({ productsArray, setIsOrderPlaced }) {
     const [updatedProductsArray, setUpdatedProductsArray] = useState(productsArray)
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalDiscount, setTotalDiscount] = useState(0)
@@ -48,7 +48,7 @@ export default function OrderList({ productsArray }) {
                     <TotalPrice totalDiscount={totalDiscount} totalCost={totalCost} />
 
                     {!showForm ? <button className='order-list__to-order' onClick={() => setShowForm(true)}>To order</button> : null}
-                    {showForm ? <OrderForm productsToBuy={updatedProductsArray} /> : null}
+                    {showForm ? <OrderForm productsToBuy={updatedProductsArray} totalCost={totalCost} setIsOrderPlaced={setIsOrderPlaced} /> : null}
                 </div>
             </div>
         </div>

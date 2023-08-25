@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Product = require('./models/product.js')
+const Order = require('./models/order.js')
 
 const PORT = 3333
 const URL = 'mongodb://127.0.0.1:27017/final_task'
@@ -30,5 +31,28 @@ app.get('/products', (req, res) => {
             res
                 .status(200)
                 .json(products)
+        })
+})
+
+app.post('/orders', (req, res) => {
+    const orderData = req.body;
+    const newOrder = new Order(orderData);
+
+    newOrder.save()
+        .then(() => {
+            res.status(201).json({ message: 'Order saved successfully' });
+        })
+        .catch(error => {
+            res.status(500).json({ message: 'Error saving order', error: error });
+        });
+});
+
+app.get('/orders', (req, res) => {
+    Order
+        .find()
+        .then((orders) => {
+            res
+                .status(200)
+                .json(orders)
         })
 })
