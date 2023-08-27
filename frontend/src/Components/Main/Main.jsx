@@ -7,6 +7,7 @@ import Shop from './Shop/Shop'
 import Projects from './Projects/Projects'
 import News from './News/News'
 import Cart from './Cart/Cart'
+import NotFound from './NotFound/NotFound'
 
 export default function Main({ products, totalCountUpdater, productsArray }) {
     return (
@@ -18,6 +19,7 @@ export default function Main({ products, totalCountUpdater, productsArray }) {
             <Route path='/projects' element={<Projects />} />
             <Route path='/news' element={<News />} />
             <Route path='/cart' element={<Cart products={products} productsArray={productsArray} />} />
+            <Route path='*' element={<NotFound />} />
         </Routes>
     )
 }
