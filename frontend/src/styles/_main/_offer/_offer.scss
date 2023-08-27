@@ -16,6 +16,13 @@
     &__products{
         @extend %centring;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &__product{
+            width: 24%;
+        }
+
         .image {
             @extend %centring;
             height: 300px;
@@ -41,7 +48,7 @@
                 text-decoration: line-through;
                 color: var(--non-actual-price);
                 font-family: 'Open Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-                font-size: 0, 83em;
+                font-size: 0.83em;
                 font-weight: 600;
             }
         }

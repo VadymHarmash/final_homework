@@ -11,7 +11,6 @@ import News from './News'
 import Form from './Form'
 
 export default function Home({ products, totalCountUpdater, productsArray }) {
-
   return (
     <>
       <Banner />

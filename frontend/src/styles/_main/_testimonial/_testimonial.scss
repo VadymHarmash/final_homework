@@ -1,7 +1,6 @@
 .testimonial {
     padding: 165px 0 185px;
-    background-image: url(./../../../assets/images/left-background.png);
-    background-repeat: no-repeat;
+    background: url(./../../../assets/images/left-background.png) no-repeat;
     position: relative;
 
     &::after {
@@ -10,9 +9,7 @@
         right: 0;
         top: 0;
         z-index: -2;
-        background-image: url(./../../../assets/images/right-background.png);
-        background-repeat: no-repeat;
-        background-position: right top;
+        background: url(./../../../assets/images/right-background.png) no-repeat right top;
         width: 100%;
         height: 100%;
     }
@@ -40,7 +37,7 @@
             width: 115px;
             height: 115px;
             border-radius: 50%;
-            background-image: url(./../../../assets/images/sara.png);
+            background: url(./../../../assets/images/sara.png) center;
         }
 
         &__stars {

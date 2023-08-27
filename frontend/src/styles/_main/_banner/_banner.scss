@@ -1,8 +1,5 @@
 .banner {
-    background-image: url(./../../../assets/images/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url(./../../../assets/images/background.png) no-repeat center / cover;
     padding: 250px 0;
 
     &__wrapper {

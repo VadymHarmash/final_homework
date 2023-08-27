@@ -16,7 +16,7 @@ export default function Product({ product, tempArray, totalCountUpdater }) {
     }
 
     return (
-        <div className="products__cards__card">
+        <div className="products__cards__card offer__products__product">
             <div onClick={openModal}>
                 <span className='category products__cards__card__category'>{product.category}</span>
                 <Image product={product} />
