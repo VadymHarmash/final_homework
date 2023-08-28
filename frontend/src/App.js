@@ -10,6 +10,11 @@ import { productsFetchData } from './actions/products.js'
 function App() {
   const [totalCount, setTotalCount] = useState(0)
   const [productsArray, setProductsArray] = useState([])
+  const [updatedProductsArray, setUpdatedProductsArray] = useState(productsArray)
+
+  useEffect(() => {
+    setUpdatedProductsArray(productsArray)
+  }, [])
 
   const total = totalCount
 
@@ -39,7 +44,7 @@ function App() {
         </header>
 
         <main className='main'>
-          <Main products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />
+          <Main products={products} totalCountUpdater={totalCountUpdater} productsArray={updatedProductsArray} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />
         </main>
 
         <footer className="footer">

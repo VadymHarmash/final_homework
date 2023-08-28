@@ -9,7 +9,7 @@ import News from './News/News'
 import Cart from './Cart/Cart'
 import NotFound from './NotFound/NotFound'
 
-export default function Main({ products, totalCountUpdater, productsArray }) {
+export default function Main({ products, totalCountUpdater, productsArray, updatedProductsArray, setUpdatedProductsArray }) {
     return (
         <Routes>
             <Route path='/' element={<Home products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />} />
@@ -18,7 +18,7 @@ export default function Main({ products, totalCountUpdater, productsArray }) {
             <Route path='/shop' element={<Shop />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/news' element={<News />} />
-            <Route path='/cart' element={<Cart products={products} productsArray={productsArray} />} />
+            <Route path='/cart' element={<Cart products={products} productsArray={productsArray} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

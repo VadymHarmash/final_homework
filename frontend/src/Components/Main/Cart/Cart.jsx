@@ -3,7 +3,7 @@ import CartBanner from './CartBanner'
 import OrderList from './OrderList'
 import ThanksPage from './OrderListItems/ThanksPage';
 
-export default function Cart({ productsArray }) {
+export default function Cart({ productsArray, updatedProductsArray, setUpdatedProductsArray }) {
     const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
     return (
@@ -11,7 +11,7 @@ export default function Cart({ productsArray }) {
             {!isOrderPlaced ?
                 <>
                     <CartBanner />
-                    <OrderList productsArray={productsArray} setIsOrderPlaced={setIsOrderPlaced} />
+                    <OrderList productsArray={productsArray} setIsOrderPlaced={setIsOrderPlaced} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />
                 </>
                 :
                 <ThanksPage productsArray={productsArray} />

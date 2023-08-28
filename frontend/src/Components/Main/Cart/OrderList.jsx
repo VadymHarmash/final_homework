@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import OrderListInfo from './OrderListItems/OrderListInfo'
 import OrderQuantity from './OrderListItems/OrderQuantity'
-import OrderListDelete from './OrderListItems/OrderListDelete'
 import TotalPrice from './OrderListItems/TotalPrice'
 import OrderForm from './OrderListItems/OrderForm'
 
-export default function OrderList({ productsArray, setIsOrderPlaced }) {
-    const [updatedProductsArray, setUpdatedProductsArray] = useState(productsArray)
+export default function OrderList({ setIsOrderPlaced, updatedProductsArray, setUpdatedProductsArray }) {
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalDiscount, setTotalDiscount] = useState(0)
     const [totalCost, setTotalCost] = useState(0)
     const [showForm, setShowForm] = useState(false)
+
+    const deleteProduct = (productToDelete) => {
+        const filteredProducts = updatedProductsArray.filter((product) => product !== productToDelete);
+        setUpdatedProductsArray(filteredProducts);
+    }
 
     useEffect(() => {
         let priceWithoutDiscount = 0
@@ -30,10 +33,6 @@ export default function OrderList({ productsArray, setIsOrderPlaced }) {
         setTotalCost(totalCost)
     }, [updatedProductsArray])
 
-    const updateProductsArray = (newProductsArray) => {
-        setUpdatedProductsArray(newProductsArray)
-    }
-
     return (
         <div className="order-list">
             <div className="container">
@@ -42,7 +41,7 @@ export default function OrderList({ productsArray, setIsOrderPlaced }) {
                         <div className="order-list__product" key={index}>
                             <OrderListInfo product={product} />
                             <OrderQuantity product={product} />
-                            <OrderListDelete productsArray={updatedProductsArray} product={product} updateProductsArray={updateProductsArray} />
+                            <button className="order-list__product__delete-button" onClick={() => deleteProduct(product)}>X</button>
                         </div>
                     ))}
                     <TotalPrice totalDiscount={totalDiscount} totalCost={totalCost} />
