@@ -1,15 +1,15 @@
 .not-found {
     margin-bottom: 130px;
-    background-color: var(--dark-green-bg);
+    background: url(./../../../assets/images/not-found-background.png) center/cover no-repeat;
 
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 120px 0;
     }
 
     &__content {
-        width: 40%;
+        width: 45%;
     }
 
     h1 {
