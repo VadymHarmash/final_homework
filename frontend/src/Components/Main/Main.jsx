@@ -12,13 +12,20 @@ import NotFound from './NotFound/NotFound'
 export default function Main({ products, totalCountUpdater, productsArray, updatedProductsArray, setUpdatedProductsArray }) {
     return (
         <Routes>
-            <Route path='/' element={<Home products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />} />
+            <Route path='/' element={<Home 
+                                        products={products} 
+                                        totalCountUpdater={totalCountUpdater} 
+                                        productsArray={productsArray} />} />
             <Route path='/about' element={<About />} />
             <Route path='/pages' element={<Pages />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/news' element={<News />} />
-            <Route path='/cart' element={<Cart products={products} productsArray={productsArray} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />} />
+            <Route path='/cart' element={<Cart 
+                                        products={products} 
+                                        productsArray={productsArray} 
+                                        updatedProductsArray={updatedProductsArray} 
+                                        setUpdatedProductsArray={setUpdatedProductsArray} />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

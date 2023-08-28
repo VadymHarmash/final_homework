@@ -11,10 +11,14 @@ export default function Cart({ productsArray, updatedProductsArray, setUpdatedPr
             {!isOrderPlaced ?
                 <>
                     <CartBanner />
-                    <OrderList productsArray={productsArray} setIsOrderPlaced={setIsOrderPlaced} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />
+                    <OrderList 
+                        productsArray={productsArray} 
+                        setIsOrderPlaced={setIsOrderPlaced} 
+                        updatedProductsArray={updatedProductsArray} 
+                        setUpdatedProductsArray={setUpdatedProductsArray} />
                 </>
                 :
-                <ThanksPage productsArray={productsArray} />
+                <ThanksPage />
             }
         </div>
     )

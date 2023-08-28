@@ -26,7 +26,12 @@ export default function Product({ product, tempArray, totalCountUpdater }) {
                     <Stars />
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} product={product} tempArray={tempArray} totalCountUpdater={totalCountUpdater} />
+            <Modal 
+                isOpen={isModalOpen} 
+                onClose={closeModal} 
+                product={product} 
+                tempArray={tempArray} 
+                totalCountUpdater={totalCountUpdater} />
         </div>
     );
 }

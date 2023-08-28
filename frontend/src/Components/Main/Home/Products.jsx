@@ -13,11 +13,19 @@ export default function Products({ products, totalCountUpdater, productsArray })
           <h2>Our Products</h2>
           <div className="products__cards">
             {fullCatalog ? (products.map((product) => (
-              <Product key={product._id} product={product} tempArray={productsArray} totalCountUpdater={totalCountUpdater} />
+              <Product 
+                key={product._id} 
+                product={product} 
+                tempArray={productsArray} 
+                totalCountUpdater={totalCountUpdater} />
             )))
               :
               limitedProducts.map((product) => (
-                <Product key={product._id} product={product} tempArray={productsArray} totalCountUpdater={totalCountUpdater} />
+                <Product 
+                  key={product._id} 
+                  product={product} 
+                  tempArray={productsArray} 
+                  totalCountUpdater={totalCountUpdater} />
               ))}
           </div>
           <button className='products__button' onClick={() => {

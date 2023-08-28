@@ -16,9 +16,12 @@ export default function Home({ products, totalCountUpdater, productsArray }) {
       <Banner />
       <Posts />
       <About />
-      <Products products={products} totalCountUpdater={totalCountUpdater} productsArray={productsArray} />
+      <Products 
+        products={products} 
+        totalCountUpdater={totalCountUpdater} 
+        productsArray={productsArray} />
       <Testimonial />
-      <Offer products={products} totalCountUpdater={totalCountUpdater} />
+      <Offer products={products} />
       <Eco />
       <Organic />
       <News />

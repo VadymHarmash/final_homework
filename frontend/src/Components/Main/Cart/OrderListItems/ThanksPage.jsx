@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ThanksPage({ productsArray }) {
+export default function ThanksPage() {
     return (
         <div className='thanks-page'>
             <div className="container">

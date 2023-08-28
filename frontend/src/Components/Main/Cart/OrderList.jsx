@@ -47,7 +47,10 @@ export default function OrderList({ setIsOrderPlaced, updatedProductsArray, setU
                     <TotalPrice totalDiscount={totalDiscount} totalCost={totalCost} />
 
                     {!showForm ? <button className='order-list__to-order' onClick={() => setShowForm(true)}>To order</button> : null}
-                    {showForm ? <OrderForm productsToBuy={updatedProductsArray} totalCost={totalCost} setIsOrderPlaced={setIsOrderPlaced} /> : null}
+                    {showForm ? <OrderForm 
+                                    productsToBuy={updatedProductsArray} 
+                                    totalCost={totalCost} 
+                                    setIsOrderPlaced={setIsOrderPlaced} /> : null}
                 </div>
             </div>
         </div>

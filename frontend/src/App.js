@@ -44,7 +44,12 @@ function App() {
         </header>
 
         <main className='main'>
-          <Main products={products} totalCountUpdater={totalCountUpdater} productsArray={updatedProductsArray} updatedProductsArray={updatedProductsArray} setUpdatedProductsArray={setUpdatedProductsArray} />
+          <Main 
+            products={products} 
+            totalCountUpdater={totalCountUpdater} 
+            productsArray={updatedProductsArray} 
+            updatedProductsArray={updatedProductsArray} 
+            setUpdatedProductsArray={setUpdatedProductsArray} />
         </main>
 
         <footer className="footer">
