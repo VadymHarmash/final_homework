@@ -4,7 +4,7 @@ import Home from './Home/Home'
 import About from './About/About'
 import Pages from './Pages/Pages'
 import ShopPage from './Shop/ShopPage'
-import Projects from './Projects/Projects'
+import ProjectsPage from './Projects/ProjectsPage'
 import NewsPage from './News/NewsPage'
 import Cart from './Cart/Cart'
 import NotFound from './NotFound/NotFound'
@@ -23,7 +23,7 @@ export default function Main({ products, totalCountUpdater, productsArray, updat
                                         products={products} 
                                         totalCountUpdater={totalCountUpdater}
                                         productsArray={productsArray} />} />
-            <Route path='/projects' element={<Projects />} />
+            <Route path='/projects' element={<ProjectsPage />} />
             <Route path='/news' element={<NewsPage />} />
             <Route path='/cart' element={<Cart 
                                         updatedProductsArray={updatedProductsArray} 
