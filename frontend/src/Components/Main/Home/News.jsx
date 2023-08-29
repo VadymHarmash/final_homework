@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function News() {
     const posts = [
@@ -11,9 +12,28 @@ export default function News() {
             author: 'Rachi Card',
             title: 'Our Favourite Summertime Tommeto',
             description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
-        }
+        },
+        // {
+        //     author: 'Rachi Card',
+        //     title: 'Benefits of Vitamin C & How to Get It',
+        //     description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
+        // },
+        // {
+        //     author: 'Rachi Card',
+        //     title: 'Research More Organic Foods',
+        //     description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
+        // },
+        // {
+        //     author: 'Rachi Card',
+        //     title: 'Everyday Fresh Fruites',
+        //     description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
+        // },
+        // {
+        //     author: 'Rachi Card',
+        //     title: "Don't Use Plastic Product! it's Kill Nature",
+        //     description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
+        // }
     ]
-
     return (
         <div className="news">
             <div className="container">
@@ -21,7 +41,7 @@ export default function News() {
                     <h3>News</h3>
                     <div className="news__title">
                         <h2>Discover weekly content about organic food, & more</h2>
-                        <a href="#">More News</a>
+                        <NavLink to='/news' className='news__title__more' href="#">More News</NavLink>
                     </div>
                     <div className="news__posts">
                         {posts.map((post, index) => (

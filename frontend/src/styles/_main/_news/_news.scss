@@ -19,7 +19,7 @@
             line-height: 114.5%;
         }
 
-        a {
+        &__more {
             @extend %yellow-button-style;
             background-color: var(--clean-white-bg);
             border: 2px var(--blue-bg) solid;
@@ -29,6 +29,8 @@
     &__posts {
         @extend %centring;
         justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 70px;
 
         &__post {
             background-size: cover;
