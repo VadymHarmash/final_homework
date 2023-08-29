@@ -8,6 +8,7 @@ import Projects from './Projects/Projects'
 import NewsPage from './News/NewsPage'
 import Cart from './Cart/Cart'
 import NotFound from './NotFound/NotFound'
+import OrdersPage from './Cart/OrdersPage'
 
 export default function Main({ products, totalCountUpdater, productsArray, updatedProductsArray, setUpdatedProductsArray }) {
     return (
@@ -28,6 +29,7 @@ export default function Main({ products, totalCountUpdater, productsArray, updat
                                         updatedProductsArray={updatedProductsArray} 
                                         setUpdatedProductsArray={setUpdatedProductsArray}
                                         totalCountUpdater={totalCountUpdater} />} />
+            <Route path='/orders' element={<OrdersPage />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

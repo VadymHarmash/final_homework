@@ -77,8 +77,6 @@ export default function OrderForm({ productsToBuy, totalCost, setIsOrderPlaced }
             totalCost: totalCost
         }
 
-        console.log(totalCost)
-
         try {
             await fetch('http://localhost:3333/orders', {
                 method: 'POST',
