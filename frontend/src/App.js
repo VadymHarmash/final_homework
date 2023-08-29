@@ -5,7 +5,7 @@ import Main from './Components/Main/Main';
 import { BrowserRouter } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { productsFetchData } from './actions/products.js'
+import { productsFetchData } from './actions/products.js';
 
 function App() {
   const [totalCount, setTotalCount] = useState(0)
@@ -21,16 +21,16 @@ function App() {
   const totalCountUpdater = (newTotalCount) => setTotalCount(newTotalCount)
 
   useEffect(() => {
-    setTotalCount(totalCount);
-  }, [totalCount]);
+    setTotalCount(totalCount)
+  }, [totalCount])
 
-  const dispatch = useDispatch();
-  const products = useSelector(state => state.products);
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products)
 
   useEffect(() => {
-    const url = 'http://localhost:3333/products';
-    dispatch(productsFetchData(url));
-  }, [dispatch]);
+    const url = 'http://localhost:3333/products'
+    dispatch(productsFetchData(url))
+  }, [dispatch])
 
   return (
     <div className="App">

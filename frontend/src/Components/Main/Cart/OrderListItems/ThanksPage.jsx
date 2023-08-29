@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
-export default function ThanksPage() {
+export default function ThanksPage({ setUpdatedProductsArray }) {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [])
+
+    useEffect(() => {
+        setUpdatedProductsArray([])
+    }, [])
+
     return (
         <div className='thanks-page'>
             <div className="container">
@@ -10,5 +18,5 @@ export default function ThanksPage() {
             </div>
             <div className="thanks-page__image"></div>
         </div>
-    )
+    );
 }

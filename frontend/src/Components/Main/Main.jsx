@@ -22,10 +22,9 @@ export default function Main({ products, totalCountUpdater, productsArray, updat
             <Route path='/projects' element={<Projects />} />
             <Route path='/news' element={<News />} />
             <Route path='/cart' element={<Cart 
-                                        products={products} 
-                                        productsArray={productsArray} 
                                         updatedProductsArray={updatedProductsArray} 
-                                        setUpdatedProductsArray={setUpdatedProductsArray} />} />
+                                        setUpdatedProductsArray={setUpdatedProductsArray}
+                                        totalCountUpdater={totalCountUpdater} />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
     )

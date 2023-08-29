@@ -8,11 +8,11 @@ export default function Product({ product, tempArray, totalCountUpdater }) {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     function openModal() {
-        setIsModalOpen(true);
+        setIsModalOpen(true)
     }
 
     function closeModal() {
-        setIsModalOpen(false);
+        setIsModalOpen(false)
     }
 
     return (
