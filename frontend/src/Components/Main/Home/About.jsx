@@ -1,5 +1,6 @@
 import React from 'react'
 import fruits from './../../../assets/images/fruits.png'
+import { NavLink } from 'react-router-dom'
 
 export default function About() {
 
@@ -33,7 +34,7 @@ export default function About() {
                                 </li>
                             ))}
                         </ul>
-                        <a href="#">Shop Now</a>
+                        <NavLink to="/shop" className="about__content__shop-now">Shop Now</NavLink>
                     </div>
                 </div>
             </div>

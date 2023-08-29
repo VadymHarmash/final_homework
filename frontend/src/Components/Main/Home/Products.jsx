@@ -10,7 +10,7 @@ export default function Products({ products, totalCountUpdater, productsArray })
       <div className="container">
         <div className="wrapper products__wrapper">
           <h3>Categories</h3>
-          <h2>Our Products</h2>
+          <h2 className='title'>Our Products</h2>
           <div className="products__cards">
             {fullCatalog ? (products.map((product) => (
               <Product 

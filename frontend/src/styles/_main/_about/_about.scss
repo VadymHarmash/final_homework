@@ -40,25 +40,25 @@
             li {
                 position: relative;
                 padding-left: 120px;
-    
+
                 h4 {
                     @extend %block-title-style;
                     font-size: 1.5625em;
                 }
-    
+
                 p {
                     color: var(--dark-grey-text);
                     line-height: 165.4%;
                 }
-    
+
                 &:first-child::before {
                     content: url(./../../../assets/icons/salad.svg);
                 }
-    
+
                 &:last-child::before {
                     content: url(./../../../assets/icons/mailbox.svg);
                 }
-    
+
                 &::before {
                     @extend %centring;
                     width: 100px;
@@ -68,8 +68,8 @@
                     padding: 20px;
                     border-radius: 20px;
                 }
-                
-                &::after{
+
+                &::after {
                     content: '';
                     display: block;
                     width: 24px;
@@ -84,15 +84,15 @@
                 &:first-child::after {
                     top: 30px;
                 }
-    
+
                 &:last-child::after {
                     top: 50px;
                 }
             }
         }
-        
 
-        a {
+
+        &__shop-now {
             @extend %yellow-button-style;
             width: 40%;
         }
