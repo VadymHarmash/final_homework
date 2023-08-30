@@ -1,4 +1,5 @@
 import React from 'react'
+import EcoListItem from './EcoListItem'
 
 export default function EcoList() {
     const listItems = [
@@ -19,10 +20,9 @@ export default function EcoList() {
     return (
         <ul>
             {listItems.map((item, index) => (
-                <li key={index}>
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
-                </li>
+                <EcoListItem
+                    key={index}
+                    item={item} />
             ))}
         </ul>
     )

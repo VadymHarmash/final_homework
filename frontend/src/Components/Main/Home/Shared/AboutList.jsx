@@ -1,4 +1,5 @@
 import React from 'react'
+import AboutListItem from './AboutListItem'
 
 export default function AboutList() {
     const listItems = [
@@ -15,10 +16,9 @@ export default function AboutList() {
     return (
         <ul>
             {listItems.map((item, index) => (
-                <li key={index}>
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
-                </li>
+                <AboutListItem 
+                    key={index}
+                    item={item} />
             ))}
         </ul>
     )

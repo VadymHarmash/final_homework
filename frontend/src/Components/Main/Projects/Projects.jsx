@@ -1,4 +1,5 @@
 import React from 'react'
+import Project from './Project'
 
 export default function Projects() {
     const projects = [
@@ -31,13 +32,9 @@ export default function Projects() {
     return (
         <div className="projects-page__projects">
             {projects.map((project, index) => (
-                <div key={index} className="projects-page__projects__project">
-                    <div className="projects-page__projects__project__image image">
-                        <div className="projects-page__projects__project__image__next"></div>
-                    </div>
-                    <h2>{project.title}</h2>
-                    <h3>{project.category}</h3>
-                </div>
+                <Project 
+                    key={index}
+                    project={project} />
             ))}
         </div>
     )

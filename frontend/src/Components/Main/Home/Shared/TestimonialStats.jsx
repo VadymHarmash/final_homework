@@ -1,4 +1,5 @@
 import React from 'react'
+import TestimonialStat from './TestimonialStat'
 
 export default function TestimonialStats() {
     const stats = [
@@ -23,11 +24,9 @@ export default function TestimonialStats() {
     return (
         <div className="testimonial__stats">
             {stats.map((item, index) => (
-                <div key={index} className="testimonial__stats__stat">
-                    <div className="testimonial__stats__stat__background"></div>
-                    <h2>{item.number}</h2>
-                    <p>{item.stat}</p>
-                </div>
+                <TestimonialStat
+                    key={index}
+                    item={item} />
             ))}
         </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import PostsArticle from './PostsArticle'
 
 export default function PostsArticles() {
     const posts = [
@@ -23,10 +24,9 @@ export default function PostsArticles() {
     return (
         <div className="posts__wrapper">
             {posts.map((post, index) => (
-                <div key={index} className={post.classes.join(' ')}>
-                    <h3>{post.subtitle}</h3>
-                    <h2>{post.description}</h2>
-                </div>
+                <PostsArticle
+                    key={index}
+                    post={post} />
             ))}
         </div>
     )

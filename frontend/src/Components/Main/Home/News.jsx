@@ -1,19 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import NewsPost from './Shared/NewsPost'
+import NewsPosts from './Shared/NewsPosts'
 
-export default function News({ allPosts = [
-    {
-        author: 'Rachi Card',
-        title: 'The Benefits of Vitamin D & How to Get It',
-        description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
-    },
-    {
-        author: 'Rachi Card',
-        title: 'Our Favourite Summertime Tommeto',
-        description: 'Simply dummy text of the printing and typesetting industry. Lorem Ipsum',
-    }
-] }) {
+export default function News() {
     
     return (
         <div className="news">
@@ -24,13 +13,7 @@ export default function News({ allPosts = [
                         <h2>Discover weekly content about organic food, & more</h2>
                         <NavLink to='/news' className='news__title__more' href="#">More News</NavLink>
                     </div>
-                    <div className="news__posts">
-                        {allPosts.map((post, index) => (
-                            <NewsPost
-                                key={index}
-                                post={post} />
-                        ))}
-                    </div>
+                    <NewsPosts isFull={false} />
                 </div>
             </div>
         </div>
