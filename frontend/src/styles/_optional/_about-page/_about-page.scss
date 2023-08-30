@@ -291,11 +291,69 @@
                     }
                 }
 
-                &:hover{
+                &:hover {
                     background-color: var(--clean-white-bg);
                     filter: drop-shadow(0px 29px 44px rgba(150, 150, 150, 0.25));
                 }
             }
+        }
+    }
+
+    &__offer {
+        @extend %centring;
+        text-align: center;
+        background-color: var(--blue-bg);
+
+        &__wrapper {
+            padding: 190px 0;
+
+            h3 {
+                @extend %block-subtitle-style;
+            }
+
+            h2 {
+                @extend %block-title-style;
+                color: var(--clean-white-text);
+                margin-bottom: 30px;
+            }
+        }
+
+        &__cards {
+            @extend %centring;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            &__card{
+                &:nth-child(1) .image {
+                    background: url(./../../../assets/images/about_spicy.png) no-repeat center/cover;
+                }
+
+                &:nth-child(2) .image {
+                    background: url(./../../../assets/images/about_nuts_feesd.png) no-repeat center/cover;
+                }
+
+                &:nth-child(3) .image {
+                    background: url(./../../../assets/images/about_fruits.png) no-repeat center/cover;
+                }
+
+                &:nth-child(4) .image {
+                    background: url(./../../../assets/images/about_vegetable.png) no-repeat center/cover;
+                }
+
+                .image{
+                    border-radius: 30px;
+                    padding: 150px;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    font-family: 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 1.5625em;
+                    font-weight: 500;
+                    color: var(--clean-white-text);
+                }
+            }
+
         }
     }
 }

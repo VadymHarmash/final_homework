@@ -143,6 +143,35 @@
                 }
             }
         }
+
+        &__offer {
+            &__wrapper {
+                padding: 140px 0;
+
+                h3 {
+                    font-size: 1.75em;
+                }
+
+                h2 {
+                    font-size: 2em;
+                }
+            }
+
+            &__cards__card {
+                .image {
+                    padding: 100px;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .form {
+            margin-top: 150px;
+        }
     }
 }
 

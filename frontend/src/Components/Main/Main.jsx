@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Home/Home'
 import AboutPage from './About/AboutPage'
-import Pages from './Pages/Pages'
+import PagesPage from './Pages/PagesPage'
 import ShopPage from './Shop/ShopPage'
 import ProjectsPage from './Projects/ProjectsPage'
 import NewsPage from './News/NewsPage'
@@ -18,7 +18,7 @@ export default function Main({ products, totalCountUpdater, productsArray, updat
                                         totalCountUpdater={totalCountUpdater} 
                                         productsArray={productsArray} />} />
             <Route path='/about' element={<AboutPage />} />
-            <Route path='/pages' element={<Pages />} />
+            <Route path='/pages' element={<PagesPage />} />
             <Route path='/shop' element={<ShopPage
                                         products={products} 
                                         totalCountUpdater={totalCountUpdater}
